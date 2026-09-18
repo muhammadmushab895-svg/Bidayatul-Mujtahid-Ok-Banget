@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Bidayatul Mujtahid Digital</title>
+<meta name="description" content="Bidayatul Mujtahid wa Nihayat al-Muqtashid karya Ibnu Rusyd — seluruh 71 kitab, 1.459 masalah fikih, 7.756 paragraf Arab beserta terjemahan Indonesia, kaidah fikih, kaidah ushul, dan kamus istilah.">
+<meta name="theme-color" content="#4E1111">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bidayatul Mujtahid Digital">
+<meta property="og:description" content="Seluruh 71 kitab Bidayatul Mujtahid — Arab dan terjemahan berdampingan, lengkap dengan sabab al-ikhtilaf, dalil, dan kaidah.">
+<meta property="og:image" content="og.png">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap">
+<style>
+/* ============ token ============ */
+:root{
+  --ground:#EBE4D6; --ground2:#E0D6C2; --surface:#FBF7EF; --surface2:#F3EBDB;
+  --src:#F6EEDC;
+  --line:#D5C8AF; --line2:#BFAD8C;
+  --ink:#1B1612; --ink2:#473C31; --muted:#796A57;
+  --accent:#8C1C1C; --accent-ink:#8C1C1C; --accent-soft:#F2DFD7; --accent-line:#C58A80;
+  --verd:#0F5C52; --verd-soft:#DDEAE4; --verd-line:#79ADA0;
+  --gold:#9A6E14; --gold-soft:#F0E3C4; --gold-line:#CBAB5E;
+  --deep:#4E1111; --deep2:#2C0A0A; --onDeep:#F3E7CE; --onDeep2:#D9B96E;
+  --shadow:0 1px 2px rgba(60,40,20,.05), 0 6px 18px -10px rgba(60,40,20,.22);
+  --shadow2:0 2px 4px rgba(60,40,20,.07), 0 14px 32px -14px rgba(60,40,20,.32);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:"Fraunces","Source Serif 4",Georgia,serif;
+  --read:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --ar:"Amiri","Traditional Arabic","Scheherazade New",serif;
+  --ar-size:1.4rem;
+  --r:6px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#14110D; --ground2:#1B1710; --surface:#1F1A13; --surface2:#282117;
+    --src:#241E15;
+    --line:#3B3324; --line2:#544731;
+    --ink:#F1E8D7; --ink2:#D2C5AE; --muted:#9C8D76;
+    --accent:#E58177; --accent-ink:#EF938A; --accent-soft:#3A1D1A; --accent-line:#7E453E;
+    --verd:#63BCA8; --verd-soft:#12302B; --verd-line:#2F6459;
+    --gold:#D9B35A; --gold-soft:#312716; --gold-line:#6E5A2C;
+    --deep:#2A0E0E; --deep2:#160707; --onDeep:#F3E7CE; --onDeep2:#D9B96E;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 18px -10px rgba(0,0,0,.7);
+    --shadow2:0 2px 4px rgba(0,0,0,.5), 0 14px 32px -14px rgba(0,0,0,.85);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#14110D; --ground2:#1B1710; --surface:#1F1A13; --surface2:#282117;
+  --src:#241E15;
+  --line:#3B3324; --line2:#544731;
+  --ink:#F1E8D7; --ink2:#D2C5AE; --muted:#9C8D76;
+  --accent:#E58177; --accent-ink:#EF938A; --accent-soft:#3A1D1A; --accent-line:#7E453E;
+  --verd:#63BCA8; --verd-soft:#12302B; --verd-line:#2F6459;
+  --gold:#D9B35A; --gold-soft:#312716; --gold-line:#6E5A2C;
+  --deep:#2A0E0E; --deep2:#160707; --onDeep:#F3E7CE; --onDeep2:#D9B96E;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 18px -10px rgba(0,0,0,.7);
+  --shadow2:0 2px 4px rgba(0,0,0,.5), 0 14px 32px -14px rgba(0,0,0,.85);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:.9375rem; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ============ kerangka ============ */
+.app{display:grid; grid-template-columns:266px minmax(0,1fr); min-height:100vh}
+.rail{
+  background:var(--surface); border-inline-end:1px solid var(--line);
+  padding:24px 0 20px; position:sticky; top:0; height:100vh;
+  display:flex; flex-direction:column; gap:20px; overflow-y:auto;
+}
+.brand{padding:0 22px; display:flex; flex-direction:column; gap:3px}
+.brand-ar{font-family:var(--ar); font-size:1.7rem; line-height:1.55; color:var(--accent-ink); direction:rtl}
+.brand-id{font-family:var(--disp); font-size:1.1875rem; font-weight:600; letter-spacing:-.015em; line-height:1.15}
+.brand-sub{font-size:.6875rem; color:var(--muted); line-height:1.5; margin-top:2px}
+.voussoir{
+  height:4px; border-radius:2px; margin-top:9px;
+  background:repeating-linear-gradient(90deg,var(--accent) 0 11px,var(--gold-line) 11px 22px);
+}
+.nav{display:flex; flex-direction:column; gap:2px; padding:0 12px}
+.nav button{
+  appearance:none; border:0; background:transparent; color:var(--ink2);
+  font:inherit; font-size:.875rem; text-align:start; cursor:pointer;
+  padding:8px 11px 8px 13px; border-radius:var(--r); display:flex; align-items:center;
+  justify-content:space-between; gap:10px; width:100%; position:relative;
+  transition:background .14s ease,color .14s ease;
+}
+.nav button::before{
+  content:""; position:absolute; inset-inline-start:3px; top:50%; translate:0 -50%;
+  width:3px; height:0; border-radius:2px; background:var(--accent); transition:height .16s ease;
+}
+.nav button:hover{background:var(--surface2); color:var(--ink)}
+.nav button.on{background:var(--accent-soft); color:var(--accent-ink); font-weight:600}
+.nav button.on::before{height:20px}
+.nav button .n{font-size:.6875rem; color:var(--muted); font-variant-numeric:tabular-nums; letter-spacing:.02em}
+.nav button.on .n{color:var(--accent-ink)}
+.nav .grp{
+  font-size:.625rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+  color:var(--muted); padding:16px 13px 5px;
+}
+.rail-foot{margin-top:auto; padding:16px 22px 0; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:11px}
+.ctrl{display:flex; gap:6px; flex-wrap:wrap}
+.ctrl button{
+  appearance:none; border:1px solid var(--line); background:var(--surface2); color:var(--ink2);
+  font:inherit; font-size:.75rem; padding:5px 10px; border-radius:var(--r); cursor:pointer;
+  transition:border-color .14s ease,color .14s ease;
+}
+.ctrl button:hover{border-color:var(--accent-line); color:var(--accent-ink)}
+.ed{margin:0; font-size:.6875rem; color:var(--muted); line-height:1.55}
+
+.main{min-width:0}
+.sec{display:none; padding:34px 38px 90px; max-width:1220px}
+.sec.on{display:block}
+
+/* ============ kepala bagian ============ */
+.head{margin:0 0 22px; display:grid; gap:9px; justify-items:start}
+.eyebrow{
+  font-size:.6875rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600;
+  color:var(--accent-ink); margin:0;
+}
+.head h1{
+  font-family:var(--disp); font-weight:600; font-size:2.375rem; line-height:1.08;
+  margin:0; letter-spacing:-.025em; text-wrap:balance;
+}
+.head .rule{
+  width:104px; height:4px; border-radius:2px;
+  background:repeating-linear-gradient(90deg,var(--accent) 0 11px,var(--gold-line) 11px 22px);
+}
+.head .sub{margin:0; color:var(--muted); font-size:.9375rem; max-width:68ch; font-family:var(--read)}
+
+/* ============ bilah alat ============ */
+.tools{
+  position:sticky; top:0; z-index:5;
+  background:var(--ground); padding:12px 0 13px; margin-bottom:18px;
+  border-bottom:1px solid var(--line);
+  display:flex; gap:9px; flex-wrap:wrap; align-items:center;
+}
+.tools input[type=search], .tools select{
+  font:inherit; font-size:.875rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--line); border-radius:var(--r); padding:9px 12px; min-width:0;
+  transition:border-color .14s ease, box-shadow .14s ease;
+}
+.tools input[type=search]{flex:1 1 280px}
+.tools select{max-width:100%; cursor:pointer}
+.tools input[type=search]:focus, .tools select:focus{
+  border-color:var(--accent-line); box-shadow:0 0 0 3px var(--accent-soft); outline:none;
+}
+.tally{font-size:.75rem; color:var(--muted); font-variant-numeric:tabular-nums; margin-inline-start:auto; letter-spacing:.02em}
+
+/* ============ potongan umum ============ */
+.chip{
+  font-size:.6875rem; padding:3px 8px; border-radius:999px; letter-spacing:.01em;
+  background:var(--surface2); color:var(--muted); white-space:nowrap; border:1px solid transparent;
+}
+.chip.kode{background:var(--accent-soft); color:var(--accent-ink); font-weight:600; letter-spacing:.04em}
+.chip.cite{border-color:var(--line); background:transparent; font-variant-numeric:tabular-nums}
+.pill{
+  font-size:.6875rem; font-weight:600; padding:3px 10px; border-radius:999px;
+  border:1px solid var(--line); color:var(--muted); white-space:nowrap;
+}
+.pill.ijma{background:var(--gold-soft); border-color:var(--gold-line); color:var(--gold)}
+.pill.khilaf{background:var(--verd-soft); border-color:var(--verd-line); color:var(--verd)}
+.srcbox{
+  background:var(--src); border:1px solid var(--line);
+  border-inline-end:3px solid var(--gold-line);
+  border-radius:var(--r); padding:12px 16px;
+}
+.ar{
+  font-family:var(--ar); font-size:var(--ar-size); line-height:2.1;
+  direction:rtl; text-align:right; color:var(--ink); white-space:pre-line;
+}
+.idn{white-space:pre-line; font-family:var(--read); font-size:1rem; line-height:1.66; color:var(--ink2)}
+.lbl{
+  font-size:.625rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+  color:var(--muted); display:block; margin-bottom:7px;
+}
+mark{background:var(--gold-soft); color:var(--ink); padding:0 2px; border-radius:2px; box-shadow:0 1px 0 var(--gold-line)}
+@keyframes rise{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+
+/* ============ kartu masalah ============ */
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  margin-bottom:12px; box-shadow:var(--shadow); overflow:hidden;
+  content-visibility:auto; contain-intrinsic-size:auto 190px;
+  animation:rise .26s ease both; transition:box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{box-shadow:var(--shadow2); border-color:var(--line2)}
+.card>summary{list-style:none; cursor:pointer; padding:16px 20px; display:grid; gap:9px}
+.card>summary::-webkit-details-marker{display:none}
+.card[open]{border-color:var(--accent-line); box-shadow:var(--shadow2)}
+.card[open]>summary{border-bottom:1px solid var(--line); background:var(--surface2)}
+.crow{display:flex; gap:7px; align-items:center; flex-wrap:wrap}
+.ctitle{
+  font-family:var(--disp); font-size:1.3125rem; font-weight:600; line-height:1.22;
+  letter-spacing:-.018em; text-wrap:balance; margin:0; color:var(--ink);
+}
+.car{font-family:var(--ar); font-size:1.1875rem; direction:rtl; text-align:right; color:var(--accent-ink); line-height:1.85; margin:0}
+.cring{color:var(--ink2); font-family:var(--read); font-size:.9375rem; margin:0}
+.card:not([open]) .cring{display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.card:not([open]) .car{display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden}
+.body{padding:20px; display:flex; flex-direction:column; gap:20px}
+.bab{font-size:.75rem; color:var(--muted); letter-spacing:.02em; margin:0}
+
+.mz{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+.mz>div{padding:12px 14px; background:var(--surface2); border-top:3px solid var(--muted)}
+.mz>div:nth-child(1){border-top-color:var(--accent)}
+.mz>div:nth-child(2){border-top-color:var(--verd)}
+.mz>div:nth-child(3){border-top-color:var(--gold)}
+.mz>div:nth-child(4){border-top-color:var(--line2)}
+.mz .who{
+  font-family:var(--disp); font-size:.8125rem; font-weight:600; letter-spacing:.01em;
+  color:var(--ink); display:block; margin-bottom:5px;
+}
+.mz .what{font-family:var(--read); font-size:.875rem; line-height:1.5; color:var(--ink2)}
+
+.blk{display:grid; gap:10px; padding-inline-start:16px; border-inline-start:3px solid var(--line)}
+.blk.sabab{border-color:var(--verd)}
+.blk.sabab .lbl{color:var(--verd)}
+.blk.dalil{border-color:var(--gold-line)}
+.blk.dalil .lbl{color:var(--gold)}
+.blk.tarjih{border-color:var(--accent)}
+.blk.tarjih .lbl{color:var(--accent-ink)}
+.blk.kaidah{border-color:var(--line2)}
+.ringkas{font-family:var(--disp); font-size:1.0625rem; line-height:1.45; color:var(--ink); margin:0; letter-spacing:-.01em}
+.pair{display:grid; gap:10px}
+.meta{display:flex; gap:7px; flex-wrap:wrap; align-items:center}
+
+/* ============ teks dwibahasa ============ */
+.par{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px;
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  padding:18px 20px; margin-bottom:10px; box-shadow:var(--shadow);
+  content-visibility:auto; contain-intrinsic-size:auto 160px; animation:rise .26s ease both;
+}
+.par .side{display:grid; gap:9px; align-content:start}
+.par .topline{display:flex; gap:7px; flex-wrap:wrap; align-items:center}
+.par .ctx{font-size:.75rem; color:var(--muted); line-height:1.5; margin:0}
+
+/* ============ kaidah & istilah ============ */
+.kd{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  padding:18px 20px; margin-bottom:10px; display:grid; gap:12px; box-shadow:var(--shadow);
+  content-visibility:auto; contain-intrinsic-size:auto 230px; animation:rise .26s ease both;
+}
+.kd .srcbox{border-inline-end-color:var(--accent-line)}
+.kd .ar{font-size:calc(var(--ar-size)*.96); line-height:2; color:var(--accent-ink); text-align:center}
+.kd .tr{font-family:var(--disp); font-size:1.1875rem; font-weight:600; line-height:1.32; text-wrap:balance; margin:0; letter-spacing:-.015em}
+.kd .pj{font-family:var(--read); font-size:.9375rem; color:var(--ink2); margin:0; line-height:1.62}
+.ist{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  padding:14px 16px; display:grid; gap:6px; box-shadow:var(--shadow); animation:rise .26s ease both;
+  border-top:3px solid var(--gold-line);
+}
+.ist .t{display:flex; gap:12px; align-items:baseline; justify-content:space-between; flex-wrap:wrap}
+.ist .name{font-family:var(--disp); font-weight:600; font-size:1.0625rem; letter-spacing:-.012em}
+.ist .a{font-family:var(--ar); font-size:1.25rem; direction:rtl; color:var(--accent-ink); line-height:1.7}
+.ist .d{font-family:var(--read); font-size:.875rem; color:var(--ink2); margin:0}
+.grid-ist{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:10px}
+
+/* ============ daftar kitab ============ */
+.grid-kitab{display:grid; grid-template-columns:repeat(auto-fill,minmax(288px,1fr)); gap:10px}
+.kt{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  padding:16px 18px 16px 21px; display:grid; gap:9px; text-align:start; cursor:pointer;
+  font:inherit; color:var(--ink); width:100%; box-shadow:var(--shadow);
+  position:relative; overflow:hidden; animation:rise .26s ease both;
+  transition:box-shadow .18s ease,border-color .18s ease,transform .18s ease;
+}
+.kt::before{content:""; position:absolute; inset-inline-start:0; top:0; bottom:0; width:3px; background:var(--gold-line); transition:background .18s ease}
+.kt:hover{box-shadow:var(--shadow2); border-color:var(--accent-line); transform:translateY(-2px)}
+.kt:hover::before{background:var(--accent)}
+.kt .no{font-size:.6875rem; color:var(--muted); letter-spacing:.03em; font-variant-numeric:tabular-nums}
+.kt .a{font-family:var(--ar); font-size:1.375rem; direction:rtl; text-align:right; color:var(--accent-ink); line-height:1.7}
+.kt .i{font-family:var(--disp); font-weight:600; font-size:1.0625rem; line-height:1.26; letter-spacing:-.015em}
+.kt .s{display:flex; gap:6px; flex-wrap:wrap}
+.kt .c{font-family:var(--read); font-size:.8125rem; color:var(--muted); line-height:1.5}
+
+/* ============ beranda ============ */
+.manuscript{
+  position:relative; overflow:hidden; border-radius:var(--r);
+  background:linear-gradient(150deg,var(--deep) 0%,var(--deep2) 100%);
+  padding:46px 44px 52px; margin-bottom:26px; border:1px solid var(--deep2);
+}
+.manuscript .arcade{position:absolute; inset-inline:0; bottom:-1px; width:100%; height:138px; opacity:.24}
+.manuscript .corner{position:absolute; width:112px; height:112px; opacity:.32}
+.manuscript .corner.tl{top:14px; inset-inline-start:14px}
+.manuscript .corner.br{bottom:14px; inset-inline-end:14px; rotate:180deg}
+.ms-in{position:relative; display:grid; gap:14px; justify-items:start}
+.ms-ar{
+  font-family:var(--ar); font-size:2.9rem; line-height:1.6; direction:rtl;
+  color:var(--onDeep2); margin:0; text-shadow:0 1px 0 rgba(0,0,0,.35);
+}
+.ms-h1{
+  font-family:var(--disp); font-weight:700; font-size:3rem; line-height:1.02;
+  margin:0; letter-spacing:-.035em; color:var(--onDeep); text-wrap:balance;
+}
+.ms-h1 span{display:block; font-weight:400; font-size:1.75rem; letter-spacing:-.02em; opacity:.78; margin-top:6px}
+.ms-by{margin:0; color:var(--onDeep2); font-size:.8125rem; letter-spacing:.1em; text-transform:uppercase; font-weight:500}
+.ms-rule{width:120px; height:4px; border-radius:2px; background:repeating-linear-gradient(90deg,var(--onDeep2) 0 11px,rgba(243,231,206,.35) 11px 22px)}
+
+.lede{
+  font-family:var(--read); font-size:1.1875rem; line-height:1.65; color:var(--ink);
+  max-width:64ch; margin:0 0 22px; padding-inline-start:20px; border-inline-start:3px solid var(--accent);
+}
+.lede em{font-style:italic; color:var(--accent-ink)}
+.stats{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(146px,1fr)); gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:var(--r); overflow:hidden;
+}
+.stat{background:var(--surface); padding:16px 18px}
+.stat b{
+  display:block; font-family:var(--disp); font-size:2rem; font-weight:600;
+  font-variant-numeric:tabular-nums; line-height:1.05; color:var(--accent-ink); letter-spacing:-.03em;
+}
+.stat span{font-size:.6875rem; color:var(--muted); letter-spacing:.04em; display:block; margin-top:4px}
+.notes{display:grid; gap:10px}
+.note{
+  background:var(--surface); border:1px solid var(--line); border-inline-start:3px solid var(--verd);
+  border-radius:var(--r); padding:15px 18px; box-shadow:var(--shadow);
+}
+.note h3{margin:0 0 5px; font-family:var(--disp); font-size:1.125rem; font-weight:600; letter-spacing:-.015em}
+.note p{margin:0; font-family:var(--read); font-size:.9375rem; color:var(--ink2)}
+.note.acc{border-inline-start-color:var(--accent)}
+.note.gld{border-inline-start-color:var(--gold-line)}
+h2.h2{font-family:var(--disp); font-size:1.625rem; font-weight:600; margin:36px 0 14px; letter-spacing:-.022em}
+
+/* ============ tabel progres ============ */
+.tw{overflow-x:auto; border:1px solid var(--line); border-radius:var(--r); background:var(--surface); box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:.875rem}
+th,td{padding:11px 14px; text-align:start; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.625rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600; color:var(--muted); background:var(--surface2); position:sticky; top:0; white-space:nowrap}
+td{font-family:var(--read)}
+td.num{font-family:var(--sans); font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--muted)}
+tbody tr:hover{background:var(--surface2)}
+tr:last-child td{border-bottom:0}
+
+.more{
+  display:block; width:100%; margin:14px 0 0; padding:13px; font:inherit; font-size:.875rem;
+  background:var(--surface); border:1px dashed var(--line2); border-radius:var(--r);
+  color:var(--muted); cursor:pointer; transition:border-color .14s ease,color .14s ease;
+}
+.more:hover{border-color:var(--accent-line); color:var(--accent-ink); border-style:solid}
+.grid-ist .more,.grid-kitab .more{grid-column:1/-1}
+.empty{padding:34px 4px; color:var(--muted); font-family:var(--read); font-size:1rem}
+.boot{
+  position:fixed; inset:0; display:grid; place-content:center; gap:10px; text-align:center;
+  background:var(--ground); color:var(--muted); font-size:.875rem; z-index:99; padding:24px;
+}
+.boot b{font-family:var(--ar); font-size:2rem; color:var(--accent-ink); font-weight:400}
+.prog{width:230px; height:3px; background:var(--line); border-radius:2px; overflow:hidden; margin:0 auto}
+.prog i{display:block; height:100%; width:0; background:var(--accent); transition:width .35s ease}
+.dl{
+  font-size:.6875rem; color:var(--muted); text-decoration:none; line-height:1.45;
+  border-bottom:1px solid var(--line); align-self:start;
+}
+.dl:hover{color:var(--accent-ink); border-color:var(--accent-line)}
+
+@media (max-width:980px){
+  .app{grid-template-columns:1fr}
+  .rail{
+    position:sticky; top:0; height:auto; gap:12px;
+    padding:16px 0 10px; border-inline-end:0; border-bottom:1px solid var(--line); z-index:10;
+    box-shadow:var(--shadow);
+  }
+  .brand{padding:0 16px}
+  .brand-ar{font-size:1.35rem}
+  .voussoir{display:none}
+  .nav{flex-direction:row; overflow-x:auto; padding:0 12px 3px; gap:5px}
+  .nav button{width:auto; white-space:nowrap; padding-inline-start:11px}
+  .nav button::before{display:none}
+  .nav .grp{display:none}
+  .rail-foot{margin-top:0; padding:11px 16px 0}
+  .ed{display:none}
+  .tools{position:static}
+  .sec{padding:22px 16px 72px}
+  .par{grid-template-columns:1fr; gap:16px}
+  .mz{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .manuscript{padding:30px 22px 40px}
+  .ms-ar{font-size:1.9rem}
+  .ms-h1{font-size:2rem}
+  .ms-h1 span{font-size:1.25rem}
+  .manuscript .corner{width:72px; height:72px}
+  .head h1{font-size:1.875rem}
+  .lede{font-size:1.0625rem}
+}
+@media (max-width:470px){
+  .mz{grid-template-columns:1fr}
+  .stat b{font-size:1.625rem}
+}
+@media print{
+  .rail,.tools,.more,.manuscript .arcade{display:none}
+  .app{grid-template-columns:1fr}
+  .card,.par,.kd{break-inside:avoid; box-shadow:none}
+}
+</style>
+
+<div class="app">
+<aside class="rail">
+  <div class="brand">
+    <span class="brand-ar">بِدَايَةُ الْمُجْتَهِدِ</span>
+    <span class="brand-id">Bidayatul Mujtahid</span>
+    <span class="brand-sub">wa Nihayat al-Muqtashid · Ibnu Rusyd al-Hafid</span>
+    <div class="voussoir"></div>
+  </div>
+  <nav class="nav" id="nav">
+    <button type="button" data-sec="beranda" class="on">Beranda</button>
+    <div class="grp">Isi kitab</div>
+    <button type="button" data-sec="kitab">Daftar Kitab <span class="n">71</span></button>
+    <button type="button" data-sec="masalah">Masalah <span class="n">1.459</span></button>
+    <button type="button" data-sec="teks">Teks &amp; Terjemah <span class="n">7.756</span></button>
+    <div class="grp">Rujukan</div>
+    <button type="button" data-sec="fikih">Kaidah Fikih <span class="n">520</span></button>
+    <button type="button" data-sec="ushul">Kaidah Ushul <span class="n">409</span></button>
+    <button type="button" data-sec="istilah">Istilah <span class="n">664</span></button>
+    <div class="grp">Berkas</div>
+    <button type="button" data-sec="progres">Progres 71 Kitab</button>
+    <button type="button" data-sec="tentang">Catatan Penyusunan</button>
+  </nav>
+  <div class="rail-foot">
+    <div class="ctrl">
+      <button type="button" id="theme" title="Ganti tema terang/gelap">Tema</button>
+      <button type="button" id="arminus" title="Perkecil teks Arab">Arab −</button>
+      <button type="button" id="arplus" title="Perbesar teks Arab">Arab +</button>
+    </div>
+    <a class="dl" id="dl" hidden href="offline/Aplikasi_Bidayatul_Mujtahid.html" download>↓ Unduh versi offline (satu berkas)</a>
+    <p class="ed">Naskah sumber: Dar al-Hadits, Kairo — 1425 H / 2004 M, 4 juz. Nomor halaman mengikuti cetakan tersebut.</p>
+  </div>
+</aside>
+
+<main class="main">
+
+<section class="sec on" id="sec-beranda">
+  <div class="manuscript">
+    <svg class="corner tl" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="#D9B96E" stroke-width="1.4">
+      <path d="M2 36V2h34M2 48V14h14M14 2v14"/>
+      <circle cx="26" cy="26" r="6"/>
+    </svg>
+    <svg class="corner br" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="#D9B96E" stroke-width="1.4">
+      <path d="M2 36V2h34M2 48V14h14M14 2v14"/>
+      <circle cx="26" cy="26" r="6"/>
+    </svg>
+    <svg class="arcade" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#D9B96E" stroke-width="2.2">
+      <path d="M12 120V56A38 38 0 1 1 88 56V120"/>
+      <path d="M112 120V56A38 38 0 1 1 188 56V120"/>
+      <path d="M212 120V56A38 38 0 1 1 288 56V120"/>
+      <path d="M312 120V56A38 38 0 1 1 388 56V120"/>
+      <path d="M412 120V56A38 38 0 1 1 488 56V120"/>
+      <path d="M512 120V56A38 38 0 1 1 588 56V120"/>
+      <path d="M0 118h600" stroke-width="3"/>
+    </svg>
+    <div class="ms-in">
+      <p class="ms-ar">بِدَايَةُ الْمُجْتَهِدِ وَنِهَايَةُ الْمُقْتَصِدِ</p>
+      <div class="ms-rule"></div>
+      <h1 class="ms-h1">Bidayatul Mujtahid<span>wa Nihayat al-Muqtashid</span></h1>
+      <p class="ms-by">Ibnu Rusyd al-Hafid · Qadhi Cordoba · wafat 595 H</p>
+    </div>
+  </div>
+
+  <p class="lede">Kitab ini tidak sekadar mendaftar pendapat mazhab. Yang membuatnya berbeda adalah <em>sabab al-ikhtilaf</em> — Ibnu Rusyd membongkar <strong>akar</strong> setiap perbedaan: satu kata yang dibaca dua cara, satu hadits yang berbenturan dengan qiyas, satu ayat yang diperselisihkan sudah dinaskh atau belum. Aplikasi ini memuat seluruh isinya tanpa ada yang dikurangi.</p>
+
+  <div class="stats">
+    <div class="stat"><b>71</b><span>kitab, 4 juz</span></div>
+    <div class="stat"><b>1.459</b><span>masalah fikih</span></div>
+    <div class="stat"><b>7.756</b><span>paragraf Arab + terjemah</span></div>
+    <div class="stat"><b>520</b><span>kaidah fikih</span></div>
+    <div class="stat"><b>409</b><span>kaidah ushul fikih</span></div>
+    <div class="stat"><b>664</b><span>istilah</span></div>
+  </div>
+
+  <h2 class="h2">Cara memakai</h2>
+  <div class="notes">
+    <div class="note"><h3>Masalah — inti aplikasi</h3><p>Satu kartu = satu masalah fikih. Terbuka: ringkasan bahasa awam, <em>sabab al-ikhtilaf</em> (redaksi Arab Ibnu Rusyd sendiri + terjemahan), pendapat Malik / Abu Hanifah / asy-Syafi'i / lainnya berdampingan, dalil ayat dan hadits dalam redaksi aslinya, tarjih Ibnu Rusyd, serta kaidah yang bekerja di situ.</p></div>
+    <div class="note acc"><h3>Teks &amp; Terjemah</h3><p>Seluruh 7.756 paragraf Arab apa adanya beserta harakatnya, berdampingan dengan terjemahan harfiah, lengkap dengan juz dan nomor halaman cetakan. Tidak ada satu paragraf pun yang dihapus atau diringkas.</p></div>
+    <div class="note gld"><h3>Pencarian</h3><p>Kotak pencarian di tiap bagian membaca Arab maupun Indonesia. Untuk Arab, harakat diabaikan — mengetik <span class="chip">البينة</span> tetap menemukan <span class="chip">الْبَيِّنَةُ</span>. Saring per kitab lewat menu di sebelahnya.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="sec-kitab">
+  <div class="head">
+    <p class="eyebrow">Peta isi</p>
+    <h1>Daftar Kitab</h1>
+    <div class="rule"></div>
+    <p class="sub">71 kitab dari empat juz, beserta juz dan halaman awal pada cetakan Dar al-Hadits. Klik satu kitab untuk melompat ke masalah-masalahnya.</p>
+  </div>
+  <div class="tools">
+    <input type="search" id="q-kitab" placeholder="Cari nama kitab (Arab atau Indonesia)…" aria-label="Cari kitab">
+    <span class="tally" id="c-kitab"></span>
+  </div>
+  <div id="l-kitab" class="grid-kitab"></div>
+</section>
+
+<section class="sec" id="sec-masalah">
+  <div class="head">
+    <p class="eyebrow">Inti kitab</p>
+    <h1>Masalah</h1>
+    <div class="rule"></div>
+    <p class="sub">1.459 masalah fikih. Klik judul untuk membuka seluruh isinya.</p>
+  </div>
+  <div class="tools">
+    <input type="search" id="q-masalah" placeholder="Cari judul, ringkasan, sabab khilaf, dalil, pendapat mazhab…" aria-label="Cari masalah">
+    <select id="k-masalah" aria-label="Saring menurut kitab"></select>
+    <select id="s-masalah" aria-label="Saring menurut jenis">
+      <option value="">Semua masalah</option>
+      <option value="khilaf">Hanya yang ada khilaf</option>
+      <option value="ijma">Hanya masalah ijma'</option>
+    </select>
+    <span class="tally" id="c-masalah"></span>
+  </div>
+  <div id="l-masalah"><p class="empty">Memuat 1.459 masalah…</p></div>
+</section>
+
+<section class="sec" id="sec-teks">
+  <div class="head">
+    <p class="eyebrow">Naskah lengkap</p>
+    <h1>Teks &amp; Terjemah</h1>
+    <div class="rule"></div>
+    <p class="sub">Seluruh paragraf Arab beserta terjemahan harfiahnya, berurutan sebagaimana dalam kitab.</p>
+  </div>
+  <div class="tools">
+    <input type="search" id="q-teks" placeholder="Cari di teks Arab atau terjemahan…" aria-label="Cari teks">
+    <select id="k-teks" aria-label="Saring menurut kitab"></select>
+    <span class="tally" id="c-teks"></span>
+  </div>
+  <div id="l-teks"><p class="empty">Memuat 7.756 paragraf…</p></div>
+</section>
+
+<section class="sec" id="sec-fikih">
+  <div class="head">
+    <p class="eyebrow">Kaidah furu' / dhawabith</p>
+    <h1>Kaidah Fikih</h1>
+    <div class="rule"></div>
+    <p class="sub">520 kaidah yang dipakai atau dinyatakan Ibnu Rusyd di sepanjang kitab, lengkap dengan sumber, juz, halaman, dan contoh penerapannya.</p>
+  </div>
+  <div class="tools">
+    <input type="search" id="q-fikih" placeholder="Cari kaidah fikih…" aria-label="Cari kaidah fikih">
+    <select id="k-fikih" aria-label="Saring menurut kitab"></select>
+    <span class="tally" id="c-fikih"></span>
+  </div>
+  <div id="l-fikih"></div>
+</section>
+
+<section class="sec" id="sec-ushul">
+  <div class="head">
+    <p class="eyebrow">Pondasi istinbath</p>
+    <h1>Kaidah Ushul Fikih</h1>
+    <div class="rule"></div>
+    <p class="sub">409 kaidah ushul — metode yang bekerja di balik setiap tarjih Ibnu Rusyd. US-01 s.d. US-13 berasal dari Muqaddimah, selebihnya dihimpun dari pembahasan tiap kitab.</p>
+  </div>
+  <div class="tools">
+    <input type="search" id="q-ushul" placeholder="Cari kaidah ushul…" aria-label="Cari kaidah ushul">
+    <select id="k-ushul" aria-label="Saring menurut kitab"></select>
+    <span class="tally" id="c-ushul"></span>
+  </div>
+  <div id="l-ushul"></div>
+</section>
+
+<section class="sec" id="sec-istilah">
+  <div class="head">
+    <p class="eyebrow">Kamus</p>
+    <h1>Istilah</h1>
+    <div class="rule"></div>
+    <p class="sub">664 istilah ushul, fikih, hadis, takaran, nama umur hewan zakat, dan istilah manasik — dijelaskan dengan bahasa sehari-hari.</p>
+  </div>
+  <div class="tools">
+    <input type="search" id="q-istilah" placeholder="Cari istilah…" aria-label="Cari istilah">
+    <span class="tally" id="c-istilah"></span>
+  </div>
+  <div id="l-istilah" class="grid-ist"></div>
+</section>
+
+<section class="sec" id="sec-progres">
+  <div class="head">
+    <p class="eyebrow">Pelacak pengerjaan</p>
+    <h1>Progres 71 Kitab</h1>
+    <div class="rule"></div>
+    <p class="sub">Seluruh kitab berstatus SELESAI. Kolom catatan memuat ringkasan isi tiap kitab.</p>
+  </div>
+  <div class="tw"><table id="t-progres"></table></div>
+</section>
+
+<section class="sec" id="sec-tentang">
+  <div class="head">
+    <p class="eyebrow">Metode &amp; keaslian</p>
+    <h1>Catatan Penyusunan</h1>
+    <div class="rule"></div>
+    <p class="sub">Keterangan lengkap dari lembar PETUNJUK basis data.</p>
+  </div>
+  <div id="l-tentang" class="notes"></div>
+</section>
+
+</main>
+</div>
+
+<div class="boot" id="boot">
+  <b>بِدَايَةُ الْمُجْتَهِدِ</b>
+  <span id="bootmsg">Memuat basis data kitab…</span>
+  <div class="prog"><i id="bootbar"></i></div>
+</div>
+
+<script>
+(function(){
+'use strict';
+var D = {}, PAGE = 30;
+
+/* ---------- utilitas ---------- */
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+var DIAC = /[\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g;
+function norm(s){
+  return s.replace(DIAC,'').replace(/[\u0623\u0625\u0622\u0671]/g,'\u0627')
+          .replace(/\u0649/g,'\u064A').replace(/\u0629/g,'\u0647').toLowerCase();
+}
+var isAr = /[\u0600-\u06FF]/;
+function hl(s,q){
+  var t = esc(s);
+  if(!q || isAr.test(q)) return t;
+  var re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+  return t.replace(re,'<mark>$1</mark>');
+}
+function num(n){return n.toLocaleString('id-ID');}
+function cite(juz,hal){return '<span class="chip cite">juz ' + esc(juz) + ' · hlm. ' + esc(hal) + '</span>';}
+function has(v){return v && v !== '—' && v.trim() !== '';}
+function src(t){return '<div class="srcbox"><div class="ar">' + esc(t) + '</div></div>';}
+
+/* ---------- pemuatan ---------- */
+function unz(id){
+  var b64 = document.getElementById(id).textContent.trim();
+  var bin = new Uint8Array(atob(b64).split('').map(function(c){return c.charCodeAt(0);}));
+  if(typeof DecompressionStream === 'undefined') return Promise.reject(new Error('nods'));
+  var st = new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return new Response(st).text().then(JSON.parse);
+}
+
+/* ---------- daftar bertahap ---------- */
+function List(el, rows, render){
+  this.el = el; this.view = rows; this.n = 0; this.render = render; this.q = '';
+}
+List.prototype.set = function(view,q){
+  this.view = view; this.q = q || ''; this.n = 0; this.el.innerHTML = ''; this.draw();
+};
+List.prototype.draw = function(){
+  var end = Math.min(this.n + PAGE, this.view.length), html = '';
+  for(var i = this.n; i < end; i++) html += this.render(this.view[i], this.q);
+  var btn = this.el.querySelector('.more');
+  if(btn) btn.remove();
+  if(this.n === 0 && this.view.length === 0){
+    this.el.innerHTML = '<p class="empty">Tidak ada hasil yang cocok. Coba kata kunci lain atau longgarkan saringannya.</p>';
+    return;
+  }
+  this.el.insertAdjacentHTML('beforeend', html);
+  this.n = end;
+  if(this.n < this.view.length){
+    var self = this;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'more';
+    b.textContent = 'Muat ' + Math.min(PAGE, this.view.length - this.n) + ' lagi — tersisa ' + num(this.view.length - this.n);
+    b.onclick = function(){ self.draw(); };
+    this.el.appendChild(b);
+  }
+};
+
+/* ---------- perenderan ---------- */
+function kitabName(key){ return D.kmap[key] || key || '—'; }
+var IJMA = '\u0645\u064F\u062C\u0652\u0645\u064E\u0639\u064C';
+function isIjma(r){ return r[10].indexOf(IJMA) > -1 || !has(r[11]); }
+
+function rMasalah(r,q){
+  var ij = isIjma(r);
+  var h = '<details class="card"><summary>';
+  h += '<div class="crow"><span class="chip kode">' + esc(r[0]) + '</span>' + cite(r[5], r[6]);
+  h += '<span class="pill ' + (ij ? 'ijma' : 'khilaf') + '">' + (ij ? 'Ijma\'' : 'Khilaf') + '</span>';
+  h += '<span class="chip">' + esc(kitabName(r[21])) + '</span></div>';
+  h += '<h3 class="ctitle">' + hl(r[3], q) + '</h3>';
+  if(has(r[4])) h += '<p class="car">' + esc(r[4]) + '</p>';
+  if(has(r[8])) h += '<p class="cring">' + hl(r[8], q) + '</p>';
+  h += '</summary><div class="body">';
+  h += '<p class="bab">' + esc(r[1]) + ' · ' + esc(r[2]) + '</p>';
+
+  h += '<div class="mz">'
+     + '<div><span class="who">Malik</span><div class="what">' + hl(r[12], q) + '</div></div>'
+     + '<div><span class="who">Abu Hanifah</span><div class="what">' + hl(r[13], q) + '</div></div>'
+     + '<div><span class="who">Asy-Syafi\'i</span><div class="what">' + hl(r[14], q) + '</div></div>'
+     + '<div><span class="who">Lainnya</span><div class="what">' + hl(r[15], q) + '</div></div>'
+     + '</div>';
+
+  h += '<div class="blk sabab"><span class="lbl">Sabab al-ikhtilaf — akar perbedaan</span>';
+  if(has(r[9])) h += '<p class="ringkas">' + hl(r[9], q) + '</p>';
+  h += '<div class="pair">' + src(r[10]) + '<div class="idn">' + hl(r[11], q) + '</div></div></div>';
+
+  if(has(r[16])){
+    h += '<div class="blk dalil"><span class="lbl">Dalil — redaksi asli &amp; terjemahan</span>';
+    h += '<div class="pair">' + src(r[16]) + '<div class="idn">' + hl(r[17], q) + '</div></div></div>';
+  }
+  if(has(r[18])) h += '<div class="blk tarjih"><span class="lbl">Tarjih / catatan Ibnu Rusyd</span><div class="idn">' + hl(r[18], q) + '</div></div>';
+  if(has(r[19])) h += '<div class="blk kaidah"><span class="lbl">Kaidah terkait</span><div class="idn">' + hl(r[19], q) + '</div></div>';
+
+  h += '<div class="meta"><span class="chip">Paragraf ' + esc(r[20]) + '</span><span class="chip">Status: ' + esc(r[7]) + '</span></div>';
+  return h + '</div></details>';
+}
+
+function rTeks(r,q){
+  var h = '<article class="par"><div class="side">';
+  h += '<div class="topline"><span class="chip kode">' + esc(r[0]) + '</span>' + cite(r[4], r[5]) + '</div>';
+  h += '<p class="ctx">' + esc(r[2]) + (has(r[3]) ? ' — ' + esc(r[3]) : '') + '</p>';
+  h += '<div class="idn">' + hl(r[7], q) + '</div></div>';
+  h += '<div class="side">' + src(r[6]) + '</div></article>';
+  return h;
+}
+
+function rKaidah(r,q){
+  var h = '<article class="kd">';
+  h += '<div class="meta"><span class="chip kode">' + esc(r[0]) + '</span>' + cite(r[6], r[7]);
+  h += '<span class="chip">' + esc(r[1]) + '</span></div>';
+  h += src(r[2]);
+  h += '<p class="tr">' + hl(r[3], q) + '</p>';
+  if(has(r[4])) h += '<p class="pj">' + hl(r[4], q) + '</p>';
+  h += '<div class="meta"><span class="chip">' + esc(r[5]) + '</span>';
+  if(has(r[8])) h += '<span class="chip">Penerapan: ' + esc(r[8]) + '</span>';
+  return h + '</div></article>';
+}
+
+function rIstilah(r,q){
+  return '<article class="ist"><div class="t"><span class="name">' + hl(r[0], q) + '</span>'
+       + '<span class="a">' + esc(r[1]) + '</span></div>'
+       + '<p class="d">' + hl(r[2], q) + '</p></article>';
+}
+
+function rKitab(r,q){
+  return '<button type="button" class="kt" data-key="' + esc(r[9]) + '">'
+       + '<span class="no">Kitab ke-' + esc(r[0]) + ' · juz ' + esc(r[3]) + ' · hlm. ' + esc(r[4]) + '</span>'
+       + '<span class="a">' + esc(r[1]) + '</span>'
+       + '<span class="i">' + hl(r[2], q) + '</span>'
+       + '<span class="s"><span class="chip">' + num(+r[6]) + ' masalah</span>'
+       + '<span class="chip">' + num(+r[7]) + ' paragraf</span></span>'
+       + (has(r[8]) ? '<span class="c">' + esc(r[8]) + '</span>' : '')
+       + '</button>';
+}
+
+/* ---------- pemasangan bagian ---------- */
+function idxOf(row, cols){
+  var s = '';
+  for(var i = 0; i < cols.length; i++) s += row[cols[i]] + ' ';
+  return norm(s);
+}
+function wire(name, rows, cols, render, opts){
+  opts = opts || {};
+  var idx = null;
+  var list = new List(document.getElementById('l-' + name), rows, render);
+  var q = document.getElementById('q-' + name);
+  var ks = document.getElementById('k-' + name);
+  var ss = document.getElementById('s-' + name);
+  var tally = document.getElementById('c-' + name);
+
+  if(ks){
+    var opt = '<option value="">Semua kitab</option>';
+    if(opts.kself){
+      var sn = {}, vals = [];
+      rows.forEach(function(r){ var v = r[opts.kcol]; if(v && !sn[v]){ sn[v] = 1; vals.push(v); } });
+      vals.forEach(function(v){ opt += '<option value="' + esc(v) + '">' + esc(v) + '</option>'; });
+    } else {
+      D.kitab.forEach(function(k){
+        if(k[9] && +k[7] > 0) opt += '<option value="' + esc(k[9]) + '">' + esc(k[2]) + '</option>';
+      });
+    }
+    ks.innerHTML = opt;
+  }
+  function apply(){
+    var qq = q ? q.value.trim() : '', nq = norm(qq);
+    var kk = ks ? ks.value : '', sv = ss ? ss.value : '';
+    if(nq && !idx) idx = rows.map(function(r){ return idxOf(r, cols); });
+    var out = [];
+    for(var i = 0; i < rows.length; i++){
+      var r = rows[i];
+      if(kk && r[opts.kcol] !== kk) continue;
+      if(sv){
+        var ij = isIjma(r);
+        if(sv === 'ijma' && !ij) continue;
+        if(sv === 'khilaf' && ij) continue;
+      }
+      if(nq && idx[i].indexOf(nq) < 0) continue;
+      out.push(r);
+    }
+    list.set(out, qq);
+    tally.textContent = num(out.length) + ' dari ' + num(rows.length);
+  }
+  var t;
+  if(q) q.addEventListener('input', function(){ clearTimeout(t); t = setTimeout(apply, 180); });
+  if(ks) ks.addEventListener('change', apply);
+  if(ss) ss.addEventListener('change', apply);
+  apply();
+}
+
+var SECS = ['beranda','kitab','masalah','teks','fikih','ushul','istilah','progres','tentang'];
+function goto(sec){
+  if(location.hash.replace('#','') === sec) route();
+  else location.hash = sec;
+}
+function route(){
+  var sec = location.hash.replace('#','');
+  if(SECS.indexOf(sec) < 0) sec = 'beranda';
+  document.querySelectorAll('.sec').forEach(function(s){ s.classList.toggle('on', s.id === 'sec-' + sec); });
+  document.querySelectorAll('#nav button').forEach(function(b){ b.classList.toggle('on', b.dataset.sec === sec); });
+  window.scrollTo(0, 0);
+}
+
+/* ---------- mulai ---------- */
+var pendingKitab = null;
+
+function startA(){
+  D.kmap = {};
+  D.kitab.forEach(function(k){ if(k[9]) D.kmap[k[9]] = k[2]; });
+
+  wire('kitab', D.kitab, [1,2,8], rKitab);
+  wire('fikih', D.fikih.slice(1), [0,1,2,3,4,5,8], rKaidah, {kcol:1, kself:1});
+  wire('ushul', D.ushul.slice(1), [0,1,2,3,4,5,8], rKaidah, {kcol:1, kself:1});
+  wire('istilah', D.istilah.slice(1), [0,1,2], rIstilah);
+
+  var t = '<thead><tr><th>No</th><th>Kitab</th><th>Juz</th><th>Hal.</th><th>Status</th><th>Masalah</th><th>Paragraf</th><th>Catatan</th></tr></thead><tbody>';
+  D.kitab.forEach(function(k){
+    if(k[0] === '0') return;
+    t += '<tr><td class="num">' + esc(k[0]) + '</td><td>' + esc(k[2]) + '</td><td class="num">' + esc(k[3]) + '</td>'
+       + '<td class="num">' + esc(k[4]) + '</td><td><span class="pill khilaf">' + esc(k[5]) + '</span></td>'
+       + '<td class="num">' + num(+k[6]) + '</td><td class="num">' + num(+k[7]) + '</td><td>' + esc(k[8]) + '</td></tr>';
+  });
+  document.getElementById('t-progres').innerHTML = t + '</tbody>';
+
+  var n = '';
+  D.petunjuk.slice(2).forEach(function(r){
+    if(!r[0] && !r[1]) return;
+    if(!r[1]){ n += '<h2 class="h2">' + esc(r[0]) + '</h2>'; return; }
+    n += '<div class="note"><h3>' + esc(r[0]) + '</h3><p>' + esc(r[1]) + '</p></div>';
+  });
+  document.getElementById('l-tentang').innerHTML = n;
+
+  document.getElementById('nav').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-sec]');
+    if(b) goto(b.dataset.sec);
+  });
+  document.getElementById('l-kitab').addEventListener('click', function(e){
+    var b = e.target.closest('.kt');
+    if(!b || !b.dataset.key) return;
+    var sel = document.getElementById('k-masalah');
+    if(sel && sel.options.length > 1){
+      sel.value = b.dataset.key;
+      sel.dispatchEvent(new Event('change'));
+    } else {
+      pendingKitab = b.dataset.key;
+    }
+    goto('masalah');
+  });
+
+  var root = document.documentElement, size = 1.4;
+  try{
+    var sv = localStorage.getItem('bm-theme'); if(sv) root.setAttribute('data-theme', sv);
+    var fs = parseFloat(localStorage.getItem('bm-ar')); if(fs){ size = fs; root.style.setProperty('--ar-size', size + 'rem'); }
+  }catch(e){}
+  document.getElementById('theme').onclick = function(){
+    var dark = root.getAttribute('data-theme') === 'dark'
+      || (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var v = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', v);
+    try{ localStorage.setItem('bm-theme', v); }catch(e){}
+  };
+  function setAr(d){
+    size = Math.max(1, Math.min(2.4, Math.round((size + d) * 100) / 100));
+    root.style.setProperty('--ar-size', size + 'rem');
+    try{ localStorage.setItem('bm-ar', size); }catch(e){}
+  }
+  document.getElementById('arplus').onclick = function(){ setAr(0.1); };
+  document.getElementById('arminus').onclick = function(){ setAr(-0.1); };
+
+  window.addEventListener('hashchange', route);
+  route();
+}
+
+function startB(){
+  wire('masalah', D.masalah.slice(1), [0,3,4,8,9,10,11,12,13,14,15,16,17,18,19,21], rMasalah, {kcol:21});
+  wire('teks', D.teks.slice(1), [0,2,3,6,7], rTeks, {kcol:2});
+  if(pendingKitab){
+    var sel = document.getElementById('k-masalah');
+    sel.value = pendingKitab; pendingKitab = null;
+    sel.dispatchEvent(new Event('change'));
+  }
+}
+
+function done(){
+  var b = document.getElementById('boot');
+  if(b) b.remove();
+}
+function fail(err){
+  var b = document.getElementById('boot');
+  if(b) b.innerHTML = '<b>عذرًا</b><span>Data kitab gagal dimuat. Periksa sambungan internet lalu muat ulang halaman.</span>';
+  if(window.console) console.error(err);
+}
+
+var SMALL = ['kitab','petunjuk','istilah','fikih','ushul'];
+var BIG   = ['masalah','teks'];
+var TOTAL = SMALL.length + BIG.length, got = 0;
+var bar = document.getElementById('bootbar');
+var msg = document.getElementById('bootmsg');
+
+function grab(k){
+  return fetch('data/' + k + '.json').then(function(r){
+    if(!r.ok) throw new Error(k + ': HTTP ' + r.status);
+    return r.json();
+  }).then(function(j){
+    D[k] = j; got++;
+    if(bar) bar.style.width = Math.round(got / TOTAL * 100) + '%';
+  });
+}
+
+Promise.all(SMALL.map(grab))
+  .then(function(){
+    startA();
+    done();
+    var dl = document.getElementById('dl');
+    if(dl) dl.hidden = false;
+    return Promise.all(BIG.map(grab));
+  })
+  .then(function(){ startB(); })
+  .catch(fail);
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  });
+}
+})();
+</script>
+
+</html>
